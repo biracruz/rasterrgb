@@ -102,7 +102,7 @@ class Raster(object):
 
         type_array = type(self.R[0][0])
         for l in range(inIMG.RasterYSize):            
-            print "line "+str(l+1)+" of "+ str(inIMG.RasterYSize)+" \r",
+            print("line "+str(l+1)+" of "+ str(inIMG.RasterYSize)+" \r")
             #separate no data pixels
             r_no_data_ixs = np.where(self.R[l] == no_data_value)    
             g_no_data_ixs = np.where(self.G[l] == no_data_value)
@@ -125,12 +125,12 @@ class Raster(object):
                 np.place(self.R[l], self.R[l] > no_data_value, _r_saida)
                 np.place(self.G[l], self.G[l] > no_data_value, _g_saida)
                 np.place(self.B[l], self.B[l] > no_data_value, _b_saida)
-        print "\n Writing raster ..."
-        print "Band 1 ..."
+        print("\n Writing raster ...")
+        print("Band 1 ...")
         dest_img.GetRasterBand(1).WriteArray(self.R)
-        print "Band 2 ..."
+        print("Band 2 ...")
         dest_img.GetRasterBand(2).WriteArray(self.G)
-        print "Band 3 ..."
+        print("Band 3 ...")
         dest_img.GetRasterBand(3).WriteArray(self.B)
 
 

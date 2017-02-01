@@ -84,7 +84,7 @@ def calculate_brightness_functions(bands_medians, ref_bands_medians, no_data_val
     
     """
     factor = luminance_difference(bands_medians, ref_bands_medians)              
-    print "\n Calculated Brightness Difference:"+str(factor)
+    print("\n Calculated Brightness Difference:"+str(factor))
     x = np.arange(0, 256)
     y = _add_with_limits(x, factor)
     f = interpolate.interp1d(x, y)
