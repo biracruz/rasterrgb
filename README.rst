@@ -2,8 +2,8 @@
 RasterRGB
 ===============================
 
-.. image:: https://img.shields.io/travis/biracruz/rasterrgb.svg
-        :target: https://travis-ci.org/biracruz/rasterrgb
+.. image:: https://travis-ci.org/biracruz/rasterrgb.svg?branch=master
+    :target: https://travis-ci.org/biracruz/rasterrgb
 
 .. image:: https://readthedocs.org/projects/rasterrgb/badge/?version=latest
         :target: https://rasterrgb.readthedocs.io/en/latest/?badge=latest
