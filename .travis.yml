@@ -27,8 +27,9 @@ install:
   - conda update -q conda
   - conda info -a
   - conda create -q -n py27 python=$TRAVIS_PYTHON_VERSION pip numpy scipy gdal
+  - source activate py27
+  - python setup.py install
   - conda install --channel https://conda.anaconda.org/jesserobertson ctox
-
 language: python
 python: 2.7
 script: 
