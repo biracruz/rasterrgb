@@ -31,6 +31,6 @@ install:
   - python setup.py install
   - conda install --channel https://conda.anaconda.org/jesserobertson ctox
 language: python
-python: 3.3
+python: 3.4
 script: 
   ctox -e ${TOXENV}
