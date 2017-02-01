@@ -1,0 +1,7 @@
+pip==8.1.2
+wheel==0.29.0
+coverage==4.1
+Sphinx==1.4.8
+numpy==1.11.3
+scipy==0.18.1
+gdal
