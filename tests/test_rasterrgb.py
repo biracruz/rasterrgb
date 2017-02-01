@@ -11,8 +11,7 @@ Tests for `rasterrgb` module.
 import sys, os
 import unittest
 from rasterrgb import raster 
-import numpy as np
-import gdal, ogr, osr
+
 
 class TestRaster(unittest.TestCase):
 
