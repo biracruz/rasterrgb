@@ -29,16 +29,9 @@ install:
   - conda info -a
 
   # Replace dep1 dep2 ... with your dependencies
-  - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION pip numpy scipy gdal virtualenv
-  - source activate test-environment
-  - python setup.py install
-  - virtualenv py27
-  - cd /Scripts/bin
-  - source activate py27
-  - cd ../..
-  - pip install -U tox
+  - conda create -q -n py27 python=$TRAVIS_PYTHON_VERSION pip numpy scipy gdal ctox
 
 language: python
 python: 2.7
 script: 
-  tox -e ${TOXENV}
+  ctox -e ${TOXENV}
