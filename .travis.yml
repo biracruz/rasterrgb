@@ -31,10 +31,9 @@ install:
   - conda info -a
 
   # Replace dep1 dep2 ... with your dependencies
-  - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION pip numpy scipy gdal
+  - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION pip numpy scipy gdal tox
   - source activate test-environment
   - python setup.py install
-  - pip install --upgrade pip && pip install -U tox
 
 
 language: python
