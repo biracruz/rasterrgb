@@ -117,7 +117,7 @@ class Raster(object):
                 #all pixels were deleted
                 continue
             else:           
-                #apply hist2sd 
+                #apply function 
                 _r_saida = functionsRGB[0](r_line).astype(type_array)
                 _g_saida = functionsRGB[1](g_line).astype(type_array)
                 _b_saida = functionsRGB[2](b_line).astype(type_array)    
@@ -134,17 +134,17 @@ class Raster(object):
         dest_img.GetRasterBand(3).WriteArray(self.B)
 
 
-    def adjust_colors(self, no_data_value = 0): 
+    def adjust_colors(self, prefix, no_data_value = 0): 
         """ Creates a new 8 bits image using histogram 2sd color balance. """       
         transfFunc = color.calculate_color_balance_functions(self.rasterRGB['bands'])
-        generated_file_name = self._file_name("8bit_hist2sd_", self.out_path, self.name)
+        generated_file_name = self._file_name(prefix+"_", self.out_path, self.name)
         self._create_image_with_functions(transfFunc, generated_file_name, no_data_value)
         return generated_file_name
 
 
-    def adjust_remove_border(self):
+    def adjust_remove_border(self, prefix):
         """ Creates a new image removing border (using value = 0). """                
-        generated_file_name = self._file_name("no_border_", self.out_path, self.name)
+        generated_file_name = self._file_name(prefix+"_", self.out_path, self.name)
         inIMG = self.rasterRGB['img']
         gdal.Translate(generated_file_name, inIMG, noData = 0)
         return generated_file_name
