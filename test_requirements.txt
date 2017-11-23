@@ -1,2 +1,2 @@
 numpy
-gdal
+gdal==2.2.3
